@@ -17,4 +17,7 @@ def contact(request):
 
 def test(request):
     context = Blog_All.objects.all()
-    return render(request, 'blog_app/test.html', {'context' : context})        
+    return render(request, 'blog_app/test.html', {'context' : context})
+
+def update(request):
+    return render(request, 'blog_app/update.html')        

@@ -21,5 +21,5 @@ class About_Me(models.Model):
 
     def __str__(self):
         return f"Your {self.intro_header} has been stored."
-
+    
 
