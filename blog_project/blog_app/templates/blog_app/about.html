@@ -2,14 +2,14 @@
 {% load static %}
 {% block title %} About us {% endblock %}
 {% block content %}
-            <h1>About Me</h1>
-            <img src="{% static 'blog_app/images/hero.jpg' %}" alt="About Me Image">
-            <p>
-                Hi, I'm the creator of this blog! I’m passionate about sharing my thoughts, experiences, and ideas with the world. 
-                Whether it's through writing about my travels, hobbies, or insights on life, I aim to inspire and connect with my readers.
-            </p>
-            <p>
-                My journey as a blogger started with a desire to document my adventures and has since grown into a platform where I explore a variety of topics. 
-                When I'm not writing, you can find me exploring new places, reading a good book, or experimenting in the kitchen. Thanks for visiting my blog!
-            </p>
+{% for about_item in context %}
+<h1>{{ about_item.intro_header }}</h1>
+{% if about_item.intro_image %}
+    <img src="{{ about_item.intro_image.url }}" alt="{{ about_item.intro_header }}">
+{% endif %}
+<p>{{ about_item.intro_content }}</p>
+
+{% empty %}
+        <p>No blog posts available. But unknown reasons</p>
+{% endfor %}
 {% endblock %}

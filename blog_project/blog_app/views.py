@@ -2,13 +2,15 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 
-from .models import Blog_All
+from .models import Blog_All, About_Me
 
 def home(request):
-    return render(request, 'blog_app/home.html')
+    context = Blog_All.objects.all()
+    return render(request, 'blog_app/home.html', {'context' : context})
 
 def about(request):
-    return render(request, 'blog_app/about.html')
+    about = About_Me.objects.all()
+    return render(request, 'blog_app/about.html', {'context' : about})
 
 def contact(request):
     return render(request, 'blog_app/contact.html')
