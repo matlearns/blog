@@ -1,0 +1,13 @@
+{% for contexts in context %}
+
+{{ contexts.blog_header }}
+{{ contexts.blog_author }}
+{{ contexts.blog_creatat }}
+{% if contexts.blog_image %}
+    <img src="{{ contexts.blog_image.url }}" alt="{{ contexts.blog_header }}" width="300">
+{% endif %}
+{{ contexts.blog_content }}            
+
+    {% empty %}
+        <p>No blog posts available.</p>
+    {% endfor %}
