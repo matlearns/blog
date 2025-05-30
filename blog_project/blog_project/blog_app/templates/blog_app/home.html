@@ -1,0 +1,17 @@
+{% extends 'blog_app/base.html' %}
+{% load static %}
+
+{% block title %} Matthew's Blog {% endblock %}
+
+{% block content %}
+{% for context in my_blog %}
+<h1>{{ context.title }}</h1>
+{% if context.image %}
+    <img src="{{ context.image.url }}" alt="{{ home_item.blog_header }}">
+{% endif %}
+<p>{{ context.content }}</p>
+
+{% empty %}
+        <p>No blog posts available.</p>
+{% endfor %}
+{% endblock %}
