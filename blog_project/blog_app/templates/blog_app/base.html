@@ -4,20 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Blog{% endblock %}</title>
+    <title>{% block title %}HOTEL SHUBHAKAMANA{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1><a href="{% url 'home' %}">My Blog</a></h1>
-            <p class="tagline">Sharing Thoughts, Adventures, and Ideas</p>
+            <h1><a href="{% url 'home' %}">Hotel Shubhakamana</a></h1>
+            <p class="tagline">Delicious Meal for Your Tastebuds</p>
         </div>
         <button class="menu-toggle">☰</button>
         <nav>
             <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'about' %}">About Me</a>
-            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'about' %}">About the Hotel</a>
+            <a href="{% url 'contact' %}">Contact the Hotel</a>
         </nav>
     </header>
     <div class="container">
